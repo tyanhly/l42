@@ -10,7 +10,8 @@
 		
 	},
 	"require-dev": {
-        "way/generators": "~2.0"
+        "way/generators": "~2.0",
+        "Codeception/Codeception": "2.0.*@dev"
     },
 	"autoload": {
 		"classmap": [
