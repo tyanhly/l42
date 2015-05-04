@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+body{
+	padding-top:70px;
+}
+.pagination-status{
+	margin: 20px 10px 20px 0;
+	display: inline-block;
+	line-height: 30px;
+	vertical-align: middle;
+}
+
+.form-search{
+	margin:10px 0 2px 0;
+	padding:15px;
+	border:1px solid #d7d2ee;
+    border-radius: 10px 10px 1px 1px;
+	background: #E7E2FF;
+}
+
+ol.alert, ul.alert{
+	padding-left:35px;
+}
