@@ -17,7 +17,7 @@
                 <!-- if there are creation errors, they will show here -->
                 {{ HTML::ol($errors->all(), array('class' => "error")) }}
                 
-                {{ Form::model($nerd, array('action' => array('NerdController@update', $nerd->id), 'method' => 'PUT')) }}
+                {{ Form::model($nerd, array('action' => array('NerdsController@update', $nerd->id), 'method' => 'PUT')) }}
                 
                 	<div class="form-group">
                 		{{ Form::label('name', 'Name') }}

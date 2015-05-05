@@ -8,7 +8,7 @@ return array(
             'host'      => 'localhost',
             'database'  => 'exam_testing',
             'username'  => 'root',
-            'password'  => 'rootroot',
+            'password'  => 'x',
         ),
     ),
 );

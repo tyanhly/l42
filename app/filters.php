@@ -35,7 +35,8 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
+// 	if (Auth::guest() && getenv('APP_ENV')!='testing')
+	if (Auth::guest() )
 	{
 		if (Request::ajax())
 		{

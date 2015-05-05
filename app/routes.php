@@ -1,4 +1,5 @@
 <?php
+//'before' => 'auth'
 Route::group(['before' => 'auth'], function(){
 
     Route::get('',
