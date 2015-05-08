@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -123,6 +123,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Zizaco\Confide\ServiceProvider',
+	    "Vcode\Qrcode\QrcodeServiceProvider",
 
 	),
 
@@ -190,7 +191,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-        'Confide' => 'Zizaco\Confide\Facade'
+        'Confide' => 'Zizaco\Confide\Facade',
+	    'Qrcode' => 'Vcode\Qrcode\Facades\Qrcode'
 
 	),
 

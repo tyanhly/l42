@@ -1,0 +1,22 @@
+{
+    "name": "vcode/qrcode",
+    "description": "",
+    "authors": [
+        {
+            "name": "Tung Ly",
+            "email": "tyanhly@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-0": {
+            "Vcode\\Qrcode\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

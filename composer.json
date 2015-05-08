@@ -3,10 +3,16 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
+	"authors": [
+        	{
+        		"name": "Tung Ly",
+	            	"email": "tyanhly@gmail.com"
+	        }
+    	],
 	"require": {
 		"laravel/framework": "4.2.*",
 		"zizaco/confide": "~4.3@dev",
-        "barryvdh/laravel-debugbar": "1.8.x"
+                "barryvdh/laravel-debugbar": "1.8.x"
 		
 	},
 	"require-dev": {
