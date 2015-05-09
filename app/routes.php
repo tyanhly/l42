@@ -1,6 +1,5 @@
 <?php
 
-use Vcode\Qrcode\Qrcode;
 //'before' => 'auth'
 Route::group(['before' => 'auth'], function(){
 
@@ -19,7 +18,7 @@ Route::group(['before' => 'auth'], function(){
                 'as' => 'index.profile',
                 'uses' => 'IndexController@profile'
             ]);
-    
+
     // #############################################
     // share Management
     // #############################################
@@ -27,12 +26,12 @@ Route::group(['before' => 'auth'], function(){
     Route::resource('nerds', 'NerdsController', [
         'except' => [ 'store', 'update', 'destroy']
     ]);
-    
+
     Route::group(['before' => 'csrf'], function(){
         Route::resource('nerds', 'NerdsController',
                 ['only' => ['store', 'update', 'destroy',]]);
     });
-    
+
 
     // Confide routes
     Route::get('users/create', [

@@ -11,7 +11,8 @@
     ],
     "require": {
         "laravel/framework": "4.2.*",
-        "zizaco/confide": "~4.3@dev"
+        "zizaco/confide": "~4.3@dev",
+        "vcode/qrcode": "dev-master"
         
     },
     "require-dev": {
