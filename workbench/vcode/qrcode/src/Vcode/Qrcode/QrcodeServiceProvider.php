@@ -1,5 +1,4 @@
 <?php
-
 namespace Vcode\Qrcode;
 
 use Illuminate\Support\ServiceProvider;
@@ -19,7 +18,8 @@ class QrcodeServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot () {
+    public function boot()
+    {
         $this->package('vcode/qrcode');
     }
 
@@ -28,20 +28,18 @@ class QrcodeServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register () {
+    public function register()
+    {
         // Register providers.
         $this->registerQrcode();
         
-        // extend blade engine by adding @currency compile function
+        // extend blade engine by adding @qrcode compile function
         $this->app['view.engine.resolver']->resolve('blade')
             ->getCompiler()
-            ->extend(
-                function  ($view)
-                {
-                    $html = "<?php Qrcode::render($1); ?>";
-                    return preg_replace("/@qrcode\((.*)\)/", $html, $view);
-                });
-    
+            ->extend(function ($view) {
+            $html = "<?php Qrcode::render($1); ?>";
+            return preg_replace("/@qrcode\((.*)\)/", $html, $view);
+        });
     }
 
     /**
@@ -49,23 +47,25 @@ class QrcodeServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides () {
+    public function provides()
+    {
         return array(
             'qrcode'
         );
     }
 
     /**
-     * Register currency provider.
+     * Register qrcode provider.
      *
      * @return void
      */
-    public function registerQrcode () {
-        $this->app['qrcode'] = $this->app->share(
-            function  ($app)
-            {
-                return new Qrcode($app);
-            });
+    public function registerQrcode()
+    {
+//         $this->app->bind('Qrcode', function () {
+//             return new Qrcode($app);
+//         });
+        $this->app['qrcode'] = $this->app->share(function ($app) {
+            return new Qrcode($app);
+        });
     }
-
 }

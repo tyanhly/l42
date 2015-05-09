@@ -9,32 +9,36 @@ namespace Vcode\Qrcode;
 class GoogleQrcode
 {
 
-    /**
-     * 
-     * @var unknown
-     */
-    public static $_defaulInformation = array(
-        'chs' => "250x250",
-        'cht' => "qr",
-        'chld'=> "H|10",         // H(QML)|1, H|2, H|3, H|4, H|10, H|40,  
-        'choe'=> "UTF-8"        // UTF-8, Shift_JIS, ISO-8859-1
-    );
     
+    /**
+     * @param array $input
+     * @param string $logoUrl
+     * @return string
+     * @author Tung Ly
+     */
     public static function createDomQrcode ($input) {
         $url = self::getUrl($input);
-        return "<img src='$url' />";
+        $html = file_get_contents(QrCode::$app['config']['qrcode::template_simple']);
+        $html = str_replace("%%URI_IMG_QRCODE%%", $url, $html);
+        return $html;
     }
     
+    /**
+     * @param array $input
+     * @throws QrcodeException
+     * @return string
+     * @author Tung Ly
+     */
     public static function getUrl($input){
-
+        $config = QrCode::$app['config']['qrcode::google_config_default'];
         if(!isset($input['chl'])){
             throw new QrcodeException(QrcodeException::DONT_HAVE_CHL);
         }
         $info = array(
-            'chs' => isset($input['chs'])?$input['chs']: self::$_defaulInformation['chs'],
-            'cht' => isset($input['cht'])?$input['cht']: self::$_defaulInformation['cht'],
-            'chld'=> isset($input['chld'])?$input['chld']: self::$_defaulInformation['chld'],
-            'choe'=> isset($input['choe'])?$input['choe']: self::$_defaulInformation['choe'],
+            'chs' => isset($input['chs'])?$input['chs'] : $config['chs'],
+            'cht' => isset($input['cht'])?$input['cht'] : $config['cht'],
+            'chld'=> isset($input['chld'])?$input['chld'] : $config['chld'],
+            'choe'=> isset($input['choe'])?$input['choe'] : $config['choe'],
             'chl' => $input['chl'],
         );
         

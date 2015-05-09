@@ -3,12 +3,14 @@
 class QrcodeException extends \Exception{
 
 
-    const DONT_KNOW_ERROR                   = 0xFFF;
-    const DONT_HAVE_CHL                     = 0x001;
+    const DONT_KNOW_ERROR                         = 0xFFF;
+    const DONT_HAVE_CHL_ERROR                     = 0x001;
+    const PARAM_NOT_STRING_OR_ARRAY_ERROR         = 0x002;
     
     public static $msgs = array(
-        self::DONT_KNOW_ERROR                           => 'APP_DONT_KNOW_ERROR',
-        self::DONT_HAVE_CHL                           => 'DONT_HAVE_CHL',
+        self::DONT_KNOW_ERROR         => 'APP_DONT_KNOW_ERROR',
+        self::DONT_HAVE_CHL_ERROR     => 'DONT_HAVE_CHL_ERROR',
+        self::PARAM_NOT_STRING_OR_ARRAY_ERROR => 'PARAM_NOT_STRING_OR_ARRAY_ERROR',
     );
     
     public static function getMsg($code)
