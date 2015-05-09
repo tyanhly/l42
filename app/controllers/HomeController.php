@@ -1,6 +1,5 @@
 <?php
 
-use Vcode\Qrcode\Qrcode;
 class HomeController extends BaseController {
 
 	/*
@@ -19,9 +18,8 @@ class HomeController extends BaseController {
 	public function showWelcome()
 	{
 
-// 	    Qrcode::render('dfdf');
-	    Qrcode::render('dfdfdf');
-	    die;
+        Qrcode::render('dfdfdf');
+// 	    die;
 	    
 		return View::make('hello');
 		

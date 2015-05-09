@@ -1,5 +1,6 @@
 <?php
 
+use Vcode\Qrcode\Qrcode;
 //'before' => 'auth'
 Route::group(['before' => 'auth'], function(){
 
@@ -58,6 +59,10 @@ Route::group(['before' => 'auth'], function(){
 });
 //
 Route::get('/', 'HomeController@showWelcome');
+Route::get('/qrcode', function(){
+
+    Qrcode::render('dfdfdfdfdf');
+});
 Route::get('users/login',                   'UsersController@login');
 Route::post('users/login',                  'UsersController@doLogin');
 Route::get('users/confirm/{code}',          'UsersController@confirm');
